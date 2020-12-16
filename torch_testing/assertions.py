@@ -37,5 +37,28 @@ def assert_within(tensor, min_val, max_val, rtol=0):
         atol=half_interval_length
     )
 
+def assert_array_compare(
+    comparison,
+    x,
+    y,
+    err_msg="",
+    verbose=True,
+    header="",
+    precision=6,
+    equal_nan=True,
+    equal_inf=True,
+):
+    npt.assert_array_compare(
+        comparison,
+        __np_array_from_torch__(x),
+        __np_array_from_torch__(y),
+        err_msg=err_msg,
+        verbose=verbose,
+        header=header,
+        precision=precision,
+        equal_nan=equal_nan,
+        equal_inf=equal_inf,
+    )
+
 def __np_array_from_torch__(torch):
     return torch.detach().numpy()

@@ -48,6 +48,9 @@ Ensures that all values of the given `tensor` are greater than or equal to `min_
 
 *NOTE: Uses `assert_allclose` under the hood, hence the fail message might currently be a little confusing.*
 
+### `assert_array_compare(comparison, x, y)`
+Ensures that the comparison holds true for all elements of `x` and `y`.
+
 ## Development
 
 *Unless noted otherwise, all commands are expected to be executed from the root directory of this repository.*
